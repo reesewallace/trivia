@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Akbar';
+    src:url('webfont/Akbar.ttf.woff') format('woff'),
+        url('webfont/Akbar.ttf.svg#Akbar') format('svg'),
+        url('webfont/Akbar.ttf.eot'),
+        url('webfont/Akbar.ttf.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+  background: url(../images/background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {background: transparent;}
+.jumbotron {background:#4F76DF;}
+
+.container {
+  margin: auto;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+h1 {
+   font-family: 'Akbar';
+   color: #FFD90F;
+   font-size: 6em;
+}
+
+h3 {
+   font-family: 'Akbar';
+   color: #FFD90F;
+   font-size: 2em;
+}
