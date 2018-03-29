@@ -1,19 +1,5 @@
    var question = [
        {
-           question      :   "To whom might this skull belong?",
-           number         :   "1",
-           image         :   "assets/images/isthis.jpg",
-           choices       :   [
-                                   "Ralph",
-                                   "Milhouse",
-                                   "Uter",
-                                   "Wendell"
-                               ],
-           correctChoice       :   "Uter",
-           answerImage  :  "assets/images/thisis.jpg",
-           explanation   :   "The poor German exchange student couldn't run because he was full of chocolate",
-       },
-       {
            question      :   "What is Homer Simpson's middle name?",
            number         :   "2",
            image         :   "assets/images/mural.jpg",
@@ -27,7 +13,20 @@
           answerImage  :  "assets/images/homerjay.gif",
            explanation   :   "Say goodbye to Homer J. Simpson and say hello to Homer Jay Simpson",
        },
-
+       {
+           question      :   "To whom might this skull belong?",
+           number         :   "1",
+           image         :   "assets/images/isthis.jpg",
+           choices       :   [
+                                   "Ralph",
+                                   "Milhouse",
+                                   "Uter",
+                                   "Wendell"
+                               ],
+           correctChoice       :   "Uter",
+           answerImage  :  "assets/images/thisis.jpg",
+           explanation   :   "The poor German exchange student couldn't run because he was full of chocolate",
+       },
        {
            question      :   "Who is the Plow King?",
            number         :   "3",
@@ -144,26 +143,25 @@
 
 
 
-   //Game object
+
    var game = {
 
-   	//Variables
+
    	correctScore: 0,
    	incorrectScore: 0,
    	results: ["Woohoo!", "D'Oh!"],
 
    	//Functions
    	start: function() {
-   		//Create Start button
+
    		$('#quiz').html('<button class="btn start" id="start">START</button>');
 
-   		//When Start clicked
+
    		$('#start').unbind().click(function() {
 
-   			//Remove the button
+
    			$('#start').remove();
 
-   			//Go to askQuestion
    			game.askQuestion();
    		})
    	},
@@ -171,14 +169,13 @@
 
    	askQuestion: function() {
 
-   		//Create divs for each answer to go
+
    		$('#answers').append("<div> <button class='btn option' id ='choiceOne'></button></div>");
    		$('#answers').append("<div> <button class='btn option' id ='choiceTwo'></button></div>");
    		$('#answers').append("<div> <button class='btn option' id ='choiceThree'</button></div>");
    		$('#answers').append("<div> <button class='btn option' id ='choiceFour'</button></div>");
 
-   		console.log("In askQuestion");
-   		//Display question
+
    	$('#image').append('<img src="'+ question[0].image +'" height="200"/>');
    		$('#quiz').html(question[0].question);
 
@@ -280,7 +277,7 @@
         //Show score
         $('#results').html("Score: " + game.correctScore + " / " + question[0].number);
 
-   			//Go to pause
+
    			game.pause();
    		}
    	},
