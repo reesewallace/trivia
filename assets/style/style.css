@@ -17,23 +17,44 @@ html {
 }
 
 body {background: transparent;}
-.jumbotron {background:#4F76DF;}
+.jumbotron {background:rgba(79,118,233,.75); padding: 10px 0 2px 0;}
 
 .container {
   margin: auto;
-  background-color: #fff;
+  margin-bottom: 20px;
   border-radius: 20px;
-  padding: 20px;
 }
 
 h1 {
    font-family: 'Akbar';
    color: #FFD90F;
    font-size: 6em;
+   text-shadow: 5px 5px #000
 }
 
 h3 {
    font-family: 'Akbar';
    color: #FFD90F;
    font-size: 2em;
+   text-shadow: 2px 2px #000
 }
+
+p {
+  font-family: 'Akbar';
+  color: #000;
+  font-size: 1em;
+}
+
+#explanation {
+  color: #000;
+}
+
+#answers {
+  padding-bottom: 10px;
+  font-family: 'Akbar';
+  color: #000;
+  font-size: 1em;}
+
+#image {padding-bottom: 10px;}
+.start {font-size: 2em; width: 40%;}
+button {font-family: 'Akbar'; width: 20%; background-color: #4F76DF; margin-top: 5px; color: #FFD90F; padding: 5px;}
