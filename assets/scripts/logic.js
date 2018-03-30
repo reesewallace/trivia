@@ -186,10 +186,8 @@
    		var choiceFour = question[0].choices[3];
    		$('#choiceFour').html(choiceFour);
 
-   		//Set correct answer
    		var correct = question[0].correctChoice;
 
-   		//Take user guess
    		$('#choiceOne').unbind().click(function() {
 
 
@@ -331,13 +329,10 @@ else if(game.correctScore >= 0 && game.correctScore <= 5) {
 
    		$('#results').html('<button id="reset">RESET</button>');
 
-   		//When Reset clicked
    		$('#reset').unbind().click(function() {
 
-   			//Remove the button
    			$('#reset').remove();
 
-   			//Go to game.reset()
    			game.reset();
 
    		})
@@ -347,11 +342,9 @@ else if(game.correctScore >= 0 && game.correctScore <= 5) {
 
    		console.log("In reset");
 
-   		//Reset page
    		location.reload();
    	},
 
    };
 
-   //Start the game
    game.start();
