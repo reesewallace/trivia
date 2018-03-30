@@ -14,6 +14,7 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  height: 100%;
 }
 
 body {background: transparent;}
@@ -66,7 +67,7 @@ body {background: transparent;}
 }
 
 
-@media (min-width: 480px) {
+@media (max-width: 480px) {
   h1 {
      font-family: 'Akbar';
      color: #FFD90F;
@@ -102,8 +103,8 @@ body {background: transparent;}
     font-size: 1em;}
 
   #image {padding-bottom: 10px;}
-  .start {font-size: 2em; padding: 5px; width: 40%;}
-  button {font-family: 'Akbar'; background-color: #4F76DF; width: 20%; margin-top: 5px; color: #FFD90F; padding: 10px;}
+  .start {font-size: 2em; padding: 5px; width: 70%;}
+  button {font-family: 'Akbar'; background-color: #4F76DF; width: 50%; margin-top: 5px; color: #FFD90F; padding: 10px;}
 
  }
 

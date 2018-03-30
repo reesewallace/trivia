@@ -82,7 +82,7 @@
                                ],
            correctChoice       :   "Jub Jub",
            answerImage  :  "assets/images/jubjub.gif",
-           explanation   :   "The name is one of Conan O'Brien's favorite words to the point that J.J. Abrams snuck it into Star Wars: The Force Awakens. https://youtu.be/UBJlToFZVHM",
+           explanation   :   "The name is one of Conan O'Brien's favorite words to the point that J.J. Abrams snuck it into Star Wars: The Force Awakens. <a href='https://youtu.be/UBJlToFZVHM'>https://youtu.be/UBJlToFZVHM</a>",
        },
        {
            question      :   "Hank Scorpio is the CEO of what organization?",
