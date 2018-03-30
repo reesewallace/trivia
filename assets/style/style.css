@@ -25,36 +25,126 @@ body {background: transparent;}
   border-radius: 20px;
 }
 
-h1 {
-   font-family: 'Akbar';
-   color: #FFD90F;
-   font-size: 6em;
-   text-shadow: 5px 5px #000
+@media (max-width: 480px) {
+  h1 {
+     font-family: 'Akbar';
+     color: #FFD90F;
+     font-size: 3em;
+     line-height: .45;
+     text-shadow: 5px 5px #000
+  }
+
+  h3 {
+     font-family: 'Akbar';
+     color: #FFD90F;
+     font-size: 2em;
+     text-shadow: 2px 2px #000
+  }
+
+  p {
+    font-family: 'Akbar';
+    color: #000;
+    font-size: 1em;
+  }
+
+  .display-3 {line-height: .75; padding-bottom: 20px; padding-top: 10px}
+
+  #explanation {
+    color: #000;
+  }
+
+  #answers {
+    padding-bottom: 10px;
+    font-family: 'Akbar';
+    color: #000;
+    font-size: 1em;}
+
+  #image {padding-bottom: 10px;}
+  .start {font-size: 2em; padding: 5px; width: 60%;}
+  button {font-family: 'Akbar'; background-color: #4F76DF; width: 20%; margin-top: 5px; color: #FFD90F; padding: 10px;}
+
 }
 
-h3 {
-   font-family: 'Akbar';
-   color: #FFD90F;
-   font-size: 2em;
-   text-shadow: 2px 2px #000
-}
 
-p {
-  font-family: 'Akbar';
-  color: #000;
-  font-size: 1em;
-}
+@media (min-width: 480px) {
+  h1 {
+     font-family: 'Akbar';
+     color: #FFD90F;
+     font-size: 3em;
+     line-height: .45;
+     text-shadow: 5px 5px #000
+  }
 
-#explanation {
-  color: #000;
-}
+  h3 {
+     font-family: 'Akbar';
+     color: #FFD90F;
+     font-size: 2em;
+     text-shadow: 2px 2px #000
+  }
 
-#answers {
-  padding-bottom: 10px;
-  font-family: 'Akbar';
-  color: #000;
-  font-size: 1em;}
+  p {
+    font-family: 'Akbar';
+    color: #000;
+    font-size: 1em;
+  }
 
-#image {padding-bottom: 10px;}
-.start {font-size: 2em; }
-button {font-family: 'Akbar';background-color: #4F76DF; margin-top: 5px; color: #FFD90F; padding: 5px;}
+  .display-3 {line-height: .75; padding-bottom: 20px; padding-top: 10px}
+  .start {padding: 10px;}
+
+  #explanation {
+    color: #000;
+  }
+
+  #answers {
+    padding-bottom: 10px;
+    font-family: 'Akbar';
+    color: #000;
+    font-size: 1em;}
+
+  #image {padding-bottom: 10px;}
+  .start {font-size: 2em; padding: 5px; width: 40%;}
+  button {font-family: 'Akbar'; background-color: #4F76DF; width: 20%; margin-top: 5px; color: #FFD90F; padding: 10px;}
+
+ }
+
+
+@media (min-width: 1024px) {
+  h1 {
+     font-family: 'Akbar';
+     color: #FFD90F;
+     font-size: 5em;
+     line-height: .45;
+     text-shadow: 5px 5px #000
+  }
+
+  h3 {
+     font-family: 'Akbar';
+     color: #FFD90F;
+     font-size: 2em;
+     text-shadow: 2px 2px #000
+  }
+
+  p {
+    font-family: 'Akbar';
+    color: #000;
+    font-size: 1em;
+  }
+
+  .display-3 {line-height: .75; padding-bottom: 20px; padding-top: 10px}
+  .start {padding: 10px;}
+
+  #explanation {
+    color: #000;
+  }
+
+  #answers {
+    padding-bottom: 10px;
+    font-family: 'Akbar';
+    color: #000;
+    font-size: 1em;}
+
+  #image {padding-bottom: 10px;}
+  .start {font-size: 2em; padding: 5px; width: 40%;}
+  button {font-family: 'Akbar'; background-color: #4F76DF; width: 20%; margin-top: 5px; color: #FFD90F; padding: 10px;}
+
+ }

@@ -1,7 +1,7 @@
    var question = [
        {
            question      :   "What is Homer Simpson's middle name?",
-           number         :   "2",
+           number         :   "1",
            image         :   "assets/images/mural.jpg",
            choices       :   [
                                    "James",
@@ -13,23 +13,10 @@
           answerImage  :  "assets/images/homerjay.gif",
            explanation   :   "Say goodbye to Homer J. Simpson and say hello to Homer Jay Simpson",
        },
-       {
-           question      :   "To whom might this skull belong?",
-           number         :   "1",
-           image         :   "assets/images/isthis.jpg",
-           choices       :   [
-                                   "Ralph",
-                                   "Milhouse",
-                                   "Uter",
-                                   "Wendell"
-                               ],
-           correctChoice       :   "Uter",
-           answerImage  :  "assets/images/thisis.jpg",
-           explanation   :   "The poor German exchange student couldn't run because he was full of chocolate",
-       },
+
        {
            question      :   "Who is the Plow King?",
-           number         :   "3",
+           number         :   "2",
            image         :   "assets/images/plowking.jpg",
            choices       :   [
                                    "Homer Simpson",
@@ -40,6 +27,20 @@
            correctChoice       :   "Barney Gumble",
            answerImage  :  "assets/images/plowking.gif",
            explanation   :   "Mr. Plow is a loser and I think that he's a boozer.",
+       },
+       {
+           question      :   "To whom might this skull belong?",
+           number         :   "3",
+           image         :   "assets/images/isthis.jpg",
+           choices       :   [
+                                   "Ralph",
+                                   "Milhouse",
+                                   "Uter",
+                                   "Wendell"
+                               ],
+           correctChoice       :   "Uter",
+           answerImage  :  "assets/images/thisis.jpg",
+           explanation   :   "The poor German exchange student couldn't run because he was full of chocolate",
        },
        {
            question      :   "What is Comic Book Guy's real name?",
@@ -53,7 +54,7 @@
                                ],
            correctChoice       :   "Jeff Albertson",
            answerImage  :  "assets/images/comic.gif",
-           explanation   :   "Worst character ever.",
+           explanation   :   "Worst. Character. Ever.",
        },
        {
            question      :   "Which one of these towns did the monorail not put on the map?",
@@ -122,7 +123,7 @@
                                    "Rex Banner"
                                ],
            correctChoice       :   "Rex Banner",
-                answerImage  :  "assets/images/rexbanner.gif",
+                answerImage  :  "assets/images/banner.gif",
            explanation   :   "It went great until he was kicked out of town via catapult.",
        },
        {
@@ -143,7 +144,6 @@
 
 
 
-
    var game = {
 
 
@@ -151,16 +151,12 @@
    	incorrectScore: 0,
    	results: ["Woohoo!", "D'Oh!"],
 
-   	//Functions
+
    	start: function() {
 
-   		$('#quiz').html('<button class="btn start" id="start">START</button>');
-
-
+   		$('#quiz').html('<button class="btn btn-large start" id="start">START</button>');
    		$('#start').unbind().click(function() {
-
-
-   			$('#start').remove();
+   		$('#start').remove();
 
    			game.askQuestion();
    		})
@@ -169,12 +165,10 @@
 
    	askQuestion: function() {
 
-
    		$('#answers').append("<div> <button class='btn option' id ='choiceOne'></button></div>");
    		$('#answers').append("<div> <button class='btn option' id ='choiceTwo'></button></div>");
    		$('#answers').append("<div> <button class='btn option' id ='choiceThree'</button></div>");
    		$('#answers').append("<div> <button class='btn option' id ='choiceFour'</button></div>");
-
 
    	$('#image').append('<img src="'+ question[0].image +'" height="200"/>');
    		$('#quiz').html(question[0].question);
@@ -228,22 +222,17 @@
 
    	checkGuess: function(userGuess,correct) {
 
-   		console.log("In checkGuess");
 
-   		//If user picks correct answer
    		if (userGuess === correct){
 
-   			//Display congrats
    			$('#quiz').html(game.results[0]);
         $('#explanation').html(question[0].explanation);
 
-   			//Empty the answers
    			$('#choiceOne').remove();
    			$('#choiceTwo').remove();
    			$('#choiceThree').remove();
    			$('#choiceFour').remove();
 
-   			//Assign pic to correctImg and display
    			var correctImg = '<img src='+ question[0].answerImage +' height="200"/>';
    			$('#image').html(correctImg);
 
@@ -253,30 +242,24 @@
 
    		}
 
-   		//If user picks wrong answer
    		else {
-   			//Discourage
+
    			$('#quiz').html(game.results[1]);
       $('#explanation').html(question[0].explanation);
-   			//Empty the answers
+
    			$('#choiceOne').remove();
    			$('#choiceTwo').remove();
    			$('#choiceThree').remove();
    			$('#choiceFour').remove();
 
-   			//Reveal correct answer
    			$('#answers').html("The correct answer was " + correct);
 
-   			//Assign pic to correctImg and display
    			var correctImg = '<img src='+ question[0].answerImage +' height="200"/>';
    			$('#image').html(correctImg);
 
-   			//Increment incorrect count
    			game.incorrectScore++;
 
-        //Show score
         $('#results').html("Score: " + game.correctScore + " / " + question[0].number);
-
 
    			game.pause();
    		}
@@ -284,58 +267,69 @@
 
    	pause: function() {
 
-   		console.log("In pause");
 
-   		//Wait 4 seconds before going to nextQuestion
-   		setTimeout(function(){ game.nextQuestion(); }, 5000);
+   		setTimeout(function(){ game.nextQuestion(); }, 4500);
    	},
 
    	nextQuestion: function() {
 
    		console.log("In nextQuestion");
 
-   		//Clear "Correct answer was"
    		$('#answers').empty();
 
-   		//Clear the #image div
    		$('#image').empty();
 
-      //Clear the #results div
    		$('#results').empty();
 
-      //Clear the #explanation div
       $('#explanation').empty();
 
-   		//Set next question to index 0
    		question.shift();
 
-   		//Checks if any questions are left
    		if(question.length === 0) {
 
-   			//If no more questions, end game
    			game.finished();
    		}
    		else {
 
-   			//Ask new question
    			game.askQuestion();
    		}
 
    	},
 
    	finished: function() {
+      if(game.correctScore == 10) {
+        $('#quiz').html("A perfect score? You get the greatest gift of all.");
+        var finishImg = '<img src="assets/images/greatest.gif" height="200"/>';
+        $('#image').html(finishImg);
+        $('#answers').html("<p>You scored " + game.correctScore + "/10 points</p>")
+}
 
-   		console.log("In finished");
+if(game.correctScore >= 8 && game.correctScore <= 9) {
+  $('#quiz').html("I for one welcome our new Simpsons trivia overlord.");
+  var finishImg = '<img src="assets/images/goreyes.gif" height="200"/>';
+  $('#image').html(finishImg);
+  $('#answers').html("<p>You scored " + game.correctScore + "/10 points</p>")
+}
 
-   		//Display stats
-   		$('#quiz').html("I for one welcome our new Simpsons trivia overlord.");
-   		$('#answers').html("<p>Number of questions right: " + game.correctScore + "</p>" +
-   							"<p>Number of questions wrong: " + game.incorrectScore + "</p>" +
-   							"<p>Number of questions unanswered: " + game.unanswered + "</p>");
+else if(game.correctScore >= 4 && game.correctScore <= 7) {
+   		$('#quiz').html("So close, yet so far away.");
+      var finishImg = '<img src="assets/images/bartno.gif" height="200"/>';
+      $('#image').html(finishImg);
+      $('#answers').html("<p>You scored " + game.correctScore + "/10 points</p>")
+}
+
+else if(game.correctScore >= 0 && game.correctScore <= 5) {
+      $('#quiz').html("You tried, and we all know what that leads to ...");
+      var finishImg = '<img src="assets/images/failno.gif" height="200"/>';
+      $('#image').html(finishImg);
+      $('#answers').html("<p>You scored " + game.correctScore + "/10 points</p>")
+               }
 
 
-   		//Create Reset button
-   		$('#image').html('<button id="reset">RESET</button>');
+
+
+
+   		$('#results').html('<button id="reset">RESET</button>');
 
    		//When Reset clicked
    		$('#reset').unbind().click(function() {
